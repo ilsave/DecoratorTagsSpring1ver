@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component("FinalDecorator")
 @Lazy
+@Scope("singleton")
 public class FinalDecorator extends Decorator {
 
     @Autowired

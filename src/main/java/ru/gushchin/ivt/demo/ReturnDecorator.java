@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component("ReturnDecorator")
 @Lazy
+@Scope("singleton")
 public class ReturnDecorator extends Decorator {
 
     public ReturnDecorator(@Lazy @Qualifier("FinalDecorator") ReturnInterface component) {

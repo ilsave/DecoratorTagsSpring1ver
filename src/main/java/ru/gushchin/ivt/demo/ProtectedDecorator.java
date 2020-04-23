@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component("ProtectedDecorator")
 @Lazy
+@Scope("singleton")
 public class ProtectedDecorator extends Decorator {
     public ProtectedDecorator( @Lazy @Qualifier("PrivateDecorator") ReturnInterface component) {
         super(component);

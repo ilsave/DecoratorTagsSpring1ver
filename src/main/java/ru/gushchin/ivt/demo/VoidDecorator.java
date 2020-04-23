@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component("VoidDecorator")
 @Lazy
+@Scope("singleton")
 public class VoidDecorator extends Decorator {
 
     @Autowired

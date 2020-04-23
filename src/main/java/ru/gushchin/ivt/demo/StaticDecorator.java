@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 @Component("StaticDecorator")
 @Lazy
+@Scope("singleton")
 public class StaticDecorator extends Decorator {
 
     @Autowired

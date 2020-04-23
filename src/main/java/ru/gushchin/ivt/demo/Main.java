@@ -80,9 +80,11 @@ public class Main {
                 // Применяем все возможные декораторы для строки и записываем в файл
 
                 ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
-                ReturnInterface returnInt = ctx.getBean("FinalDecorator", FinalDecorator.class);
-                //pw.print(returnInt.sendBackLine(new StringBuilder(line1)));
-                pw.print(new ReturnDecorator(new FinalDecorator(new PrivateDecorator(new ProtectedDecorator(new PublicDecorator(new StaticDecorator(new VoidDecorator(new ReturnClass(new StringBuilder(line1))))))))).sendBackLine().toString()); // Каждая строка из списка пишется в файл
+                ReturnDecorator returnDecorator = ctx.getBean("ReturnDecorator", ReturnDecorator.class);
+                pw.print(returnDecorator.sendBackLine());
+
+
+                //pw.print(new ReturnDecorator(new FinalDecorator(new PrivateDecorator(new ProtectedDecorator(new PublicDecorator(new StaticDecorator(new VoidDecorator(new ReturnClass(new StringBuilder(line1))))))))).sendBackLine().toString()); // Каждая строка из списка пишется в файл
                 pw.println("</br>");
             }
             pw.print(line3); // Вторая часть разметки пишется в файл
